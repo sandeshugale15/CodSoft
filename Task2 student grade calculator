@@ -1,0 +1,47 @@
+// program for calclulate the total marks ,average marksand show the grade.
+import java.io.*;
+public class task2 {
+    public static void main(String []args)throws IOException{
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(" Enter how Many Subject you Have? ");
+        int no_of_subject=Integer.parseInt(br.readLine());
+        double totalmarks=0;
+        int ans=0;
+//for loop for how many subject you have..
+        for(int i=1;i<=no_of_subject;i++){
+            System.out.println("enter the marks of the subject:");
+            int marks=Integer.parseInt(br.readLine());
+            //calculate the total_marks.
+            totalmarks=totalmarks+marks;
+
+        }
+        System.out.println("total marks:"+totalmarks);
+        //calculate average of total marks.
+        double avg=(totalmarks/(100*no_of_subject)*100);
+        System.out.println("avg: "+avg);
+        //if_else glader for calulate grade on the basis of total marks..
+         if(avg>=97.0){
+             System.out.println("O");
+
+        }
+         else if(avg>90.0){
+             System.out.println("A+");
+         }
+         else if(avg>80.0){
+             System.out.println("A");
+         }
+         else if(avg>65.0){
+             System.out.println("B");
+         }
+         else if(avg>50.0){
+             System.out.println("C");
+         }
+         else if(avg>35.0){
+             System.out.println("D");
+         } else  {
+            System.out.println("fail");
+         }
+
+
+    }
+}
