@@ -1,0 +1,65 @@
+// prrogram for ATM interface.
+import java.io.*;
+public class Task3 {
+    public static void main(String args[]) throws IOException{
+        double balance=100000.01;
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        while (true){
+            System.out.println("Atm Machine:");
+            System.out.println("choose 1 for withdraw:");
+            System.out.println("choose 2 for Deposite :");
+            System.out.println("choose 3 for check Balance :");
+            System.out.println("choose 4 for EXIT:");
+            System.out.println("choose operation you want to perform:");
+            int op=Integer.parseInt(br.readLine());
+            switch (op){
+                case 1:{
+                    System.out.println("Enter Amount To Be Withdraw:");
+                    double withdraw=Double.parseDouble(br.readLine());
+                    if(balance>=withdraw){
+                        balance=balance-withdraw;
+
+                        System.out.println("Your Amount Is Successfully Withdraw..");
+                        System.out.println("The Remaining Amount:"+balance);
+                        System.out.println("Kindly Collect Your Amount...!");
+
+                    }
+                    else{
+                        System.out.println("Influcient Balance.. :");
+
+                    }
+                    break;
+                    }
+                case 2:{
+                    System.out.println("Enter The Amount For Deposite:");
+                    Double depodite=Double.parseDouble(br.readLine());
+                    balance=balance+depodite;
+                    System.out.println("The Amount Has Been Deposited..");
+                    System.out.println("The Total Amount: "+balance);
+                    break;
+
+                }
+                case 3:{
+                    System.out.println("Your Balance Is:");
+                    System.out.println(balance);
+                    break;
+
+                }
+                case 4:{
+                    System.out.println("EXIT..!");
+                    break;
+                }
+                case 5:
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Invalid Entry..");
+
+            }
+            break;
+
+        }
+
+    }
+}
